@@ -3,9 +3,13 @@
     <packageId>wishRobber.theantagonist</packageId>
     <name>The Antagonist</name>
     <author>wishRobber</author>
-    <description>Adds a custom AI storyteller, "The Antagonist".
+    <description>The Antagonist is a custom AI storyteller for RimWorld - a new face on the Choose AI Storyteller screen alongside Cassandra Classic, Phoebe Chillax and Randy Random.
 
-For now it is a clone of Cassandra Classic (same event pacing) with a placeholder portrait - a starting point for a bespoke storyteller.</description>
+Right now The Antagonist plays exactly like Cassandra: a steady, escalating storyteller that pushes your colony with raids, threats and events on a classic rising curve of challenge and tension, then eases off, then pushes again. It ships with a placeholder portrait and is built as a clean starting point for a fully bespoke storyteller - future updates will give it its own personality, event pacing and difficulty feel.
+
+Pure-XML StorytellerDef, no dependencies, and safe to add to or remove from any save at any time. Pairs perfectly with the Improved Defaults mod, which can pre-select The Antagonist automatically for every new game.
+
+Keywords: custom storyteller, AI storyteller mod, new storyteller, difficulty, events, raids.</description>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
