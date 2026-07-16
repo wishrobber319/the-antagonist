@@ -59,10 +59,10 @@ namespace TheAntagonist
         private static readonly SimpleCurve ThreatCurve = new SimpleCurve
         {
             new CurvePoint(1f, 1.0f),
-            new CurvePoint(50f, 1.7f),
-            new CurvePoint(100f, 2.5f),
-            new CurvePoint(200f, 4.0f),
-            new CurvePoint(400f, 4.5f),
+            new CurvePoint(50f, 1.8f),
+            new CurvePoint(100f, 2.7f),
+            new CurvePoint(200f, 4.4f),
+            new CurvePoint(400f, 5.0f),
         };
 
         public static float ThreatMultiplierFor(IIncidentTarget target)

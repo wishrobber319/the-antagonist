@@ -5,7 +5,7 @@
     <author>wishRobber</author>
     <description>The Antagonist is a custom AI storyteller for RimWorld that knows how strong you really are.
 
-Most storytellers size their threats from colony wealth and head-count, which badly under-reads a levelled party - a level 300 hero in plain gear looks "cheap", so late-game raids turn into a formality. The Antagonist reads your ISEKAI RPG Leveling levels and grows with your heroes: as they climb the ranks, it hits back harder, up to roughly 4.5x the normal threat budget at max level.
+Most storytellers size their threats from colony wealth and head-count, which badly under-reads a levelled party - a level 300 hero in plain gear looks "cheap", so late-game raids turn into a formality. The Antagonist reads your ISEKAI RPG Leveling levels and grows with your heroes: as they climb the ranks, it hits back harder, up to 5x the normal threat budget at max level.
 
 Its threat scaling is power-weighted, so one strong hero raises the danger for the whole party - you cannot hide a max-level carry behind nine rookies. It never makes the game easier than normal; it only ever escalates.
 
