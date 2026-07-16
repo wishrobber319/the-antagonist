@@ -54,14 +54,18 @@ namespace TheAntagonist
 
     internal static class IsekaiPower
     {
-        // Power-weighted average level -> threat multiplier.
+        // Power-weighted average level -> threat multiplier. Linear, ~+0.01x per level, from 1.0x at
+        // level 1 to 5.0x at level 400 (and capped there for anything beyond).
+        // Deliberately NOT front-loaded: an earlier curve hit 4.4x by level 200 and then crawled to 5.0x
+        // at 400, which is backwards - levels 200-400 (SS -> SSS) are where Isekai power grows most, so
+        // flattening there would let the strongest parties outrun the storyteller.
         // Isekai tiers for reference: ~50 = A, 100 = S, 200 = SS, 400 = SSS.
         private static readonly SimpleCurve ThreatCurve = new SimpleCurve
         {
             new CurvePoint(1f, 1.0f),
-            new CurvePoint(50f, 1.8f),
-            new CurvePoint(100f, 2.7f),
-            new CurvePoint(200f, 4.4f),
+            new CurvePoint(50f, 1.5f),
+            new CurvePoint(100f, 2.0f),
+            new CurvePoint(200f, 3.0f),
             new CurvePoint(400f, 5.0f),
         };
 
