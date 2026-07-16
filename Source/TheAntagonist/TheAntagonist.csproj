@@ -20,9 +20,10 @@
       <HintPath>/mnt/d/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="IsekaiLeveling">
+      <HintPath>/mnt/d/SteamLibrary/steamapps/workshop/content/294100/3657580708/Assemblies/IsekaiLeveling.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
-
-  <!-- NOTE: Isekai RPG Leveling is deliberately NOT referenced. We reach it via reflection so The
-       Antagonist still loads (and plays as plain Cassandra) when Isekai isn't installed. -->
 
 </Project>

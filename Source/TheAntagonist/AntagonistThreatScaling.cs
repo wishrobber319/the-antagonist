@@ -1,6 +1,5 @@
-using System;
-using System.Reflection;
 using HarmonyLib;
+using IsekaiLeveling;
 using RimWorld;
 using Verse;
 
@@ -53,14 +52,9 @@ namespace TheAntagonist
         }
     }
 
-    // Reads Isekai RPG Leveling through reflection so this mod has no hard dependency on it.
     internal static class IsekaiPower
     {
-        private static bool resolved;
-        private static MethodInfo getCached;   // static IsekaiComponent GetCached(Pawn)
-        private static PropertyInfo levelProp; // int Level
-
-        // Power-weighted average level -> threat multiplier ("brutal" curve).
+        // Power-weighted average level -> threat multiplier.
         // Isekai tiers for reference: ~50 = A, 100 = S, 200 = SS, 400 = SSS.
         private static readonly SimpleCurve ThreatCurve = new SimpleCurve
         {
@@ -71,32 +65,8 @@ namespace TheAntagonist
             new CurvePoint(400f, 4.5f),
         };
 
-        private static void Resolve()
-        {
-            if (resolved)
-            {
-                return;
-            }
-
-            resolved = true;
-            Type comp = AccessTools.TypeByName("IsekaiLeveling.IsekaiComponent");
-            if (comp == null)
-            {
-                return; // Isekai not installed - scaling stays off, storyteller plays as vanilla Cassandra
-            }
-
-            getCached = AccessTools.Method(comp, "GetCached", new[] { typeof(Pawn) });
-            levelProp = AccessTools.Property(comp, "Level");
-        }
-
         public static float ThreatMultiplierFor(IIncidentTarget target)
         {
-            Resolve();
-            if (getCached == null || levelProp == null)
-            {
-                return 1f;
-            }
-
             // Power-weighted (contraharmonic) mean level = sum(level^2) / sum(level).
             // A flat average would let nine level-1 pawns hide one level-300 hero; weighting by level
             // means the party's real muscle drives the threat.
@@ -110,16 +80,10 @@ namespace TheAntagonist
                     continue;
                 }
 
-                object isekai = getCached.Invoke(null, new object[] { pawn });
-                if (isekai == null)
-                {
-                    continue; // not an Isekai pawn
-                }
-
-                int level = (int)levelProp.GetValue(isekai);
+                int level = IsekaiComponent.GetCached(pawn)?.Level ?? 0;
                 if (level <= 0)
                 {
-                    continue;
+                    continue; // not an Isekai pawn, or unlevelled
                 }
 
                 sumLevel += level;

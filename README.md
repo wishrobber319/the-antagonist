@@ -2,9 +2,11 @@
 
 A custom AI storyteller for RimWorld 1.6 that **scales its threats to your party's actual power**, not just your wealth.
 
+**Requires** [ISEKAI RPG Leveling](https://steamcommunity.com/sharedfiles/filedetails/?id=3657580708) and Harmony.
+
 ## Why
 
-Vanilla's `StorytellerUtility.DefaultThreatPointsNow` sizes threats from colony **wealth + pawn count**. That badly under-reads an ISEKAI RPG Leveling party — a level-300 hero in plain gear reads as "cheap", so late-game raids become a formality. The Antagonist closes that gap.
+Vanilla's `StorytellerUtility.DefaultThreatPointsNow` sizes threats from colony **wealth + pawn count**. That badly under-reads an Isekai party — a level-300 hero in plain gear reads as "cheap", so late-game raids become a formality. The Antagonist closes that gap.
 
 ## How it works
 
@@ -21,11 +23,9 @@ Curve (avg level → multiplier), Isekai tiers ~50=A, 100=S, 200=SS, 400=SSS:
 |---|---|---|---|---|---|
 | multiplier | 1.0× | 1.7× | 2.5× | 4.0× | 4.5× |
 
-Isekai is read via **reflection**, so it's an optional dependency — without it installed, The Antagonist loads fine and plays as a standard Cassandra-style storyteller.
-
 ## Event pacing
 
-Currently a clone of Cassandra Classic's comps (pure-XML `StorytellerDef` inheriting `BaseStoryteller`). Ships with a placeholder portrait in `Textures/UI/HeroArt/Storytellers/`.
+The `StorytellerDef` is pure XML inheriting `BaseStoryteller`. Its event-pacing comps are currently the Core "Cassandra" set verbatim, kept as a known-good baseline until they get tuned — the mod's own character comes from the threat scaling above. Ships with a placeholder portrait in `Textures/UI/HeroArt/Storytellers/`.
 
 ---
 

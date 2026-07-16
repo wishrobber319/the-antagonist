@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- The Antagonist: a clone of Cassandra Classic (Core "Cassandra") with a renamed label and a
-       placeholder portrait. Inherits BaseStoryteller like every vanilla/mod storyteller (population
-       and adaptation curves live there); the comps below are copied verbatim from Cassandra so the
-       event pacing is identical for now. Swap the portrait textures and tune the comps later. -->
+  <!-- The Antagonist. Inherits BaseStoryteller like every vanilla/mod storyteller (population and
+       adaptation curves live there). Event-pacing comps below are currently the Core "Cassandra"
+       set verbatim - kept as a known-good baseline until they get tuned. The mod's own identity
+       comes from the Harmony patch on StorytellerUtility.DefaultThreatPointsNow, which scales the
+       threat budget by the party's Isekai power. Swap the portrait textures later. -->
   <StorytellerDef ParentName="BaseStoryteller">
     <defName>WR_TheAntagonist</defName>
     <label>The Antagonist</label>
-    <description>The Antagonist creates story events on a classic increasing curve of challenge and tension - pushing you with dangerous events, then giving breathing room, then coming back to push once more.</description>
+    <description>The Antagonist knows how strong you really are. It reads your heroes' Isekai levels and grows with them - as they climb the ranks, it hits back harder. One strong hero raises the danger for the whole party, and it never eases off.
+
+Events come on a rising curve of challenge and tension: it pushes you with danger, gives you breathing room, then comes back to push once more.</description>
     <portraitLarge>UI/HeroArt/Storytellers/TheAntagonist</portraitLarge>
     <portraitTiny>UI/HeroArt/Storytellers/TheAntagonistTiny</portraitTiny>
     <listOrder>25</listOrder>

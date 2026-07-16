@@ -3,17 +3,15 @@
     <packageId>wishRobber.theantagonist</packageId>
     <name>The Antagonist</name>
     <author>wishRobber</author>
-    <description>The Antagonist is a custom AI storyteller for RimWorld - a new face on the Choose AI Storyteller screen alongside Cassandra Classic, Phoebe Chillax and Randy Random. It knows how strong you really are.
+    <description>The Antagonist is a custom AI storyteller for RimWorld that knows how strong you really are.
 
-The Antagonist scales its threats to your party's actual power, not just your stuff. Vanilla storytellers size raids from colony wealth and head-count, which badly under-reads a levelled party - a level 300 hero in plain gear looks "cheap", so late-game raids turn into a formality. The Antagonist reads your ISEKAI RPG Leveling levels and grows with your heroes: as they climb the ranks, it hits back harder (up to roughly 4.5x the normal threat budget at max level).
+Most storytellers size their threats from colony wealth and head-count, which badly under-reads a levelled party - a level 300 hero in plain gear looks "cheap", so late-game raids turn into a formality. The Antagonist reads your ISEKAI RPG Leveling levels and grows with your heroes: as they climb the ranks, it hits back harder, up to roughly 4.5x the normal threat budget at max level.
 
 Its threat scaling is power-weighted, so one strong hero raises the danger for the whole party - you cannot hide a max-level carry behind nine rookies. It never makes the game easier than normal; it only ever escalates.
 
-Event pacing currently follows Cassandra's classic rising curve of challenge and tension. It ships with a placeholder portrait.
+Event pacing follows a rising curve of challenge and tension: it pushes you with dangerous events, gives you breathing room, then comes back to push once more.
 
-ISEKAI RPG Leveling is optional - without it, The Antagonist simply plays as a standard Cassandra-style storyteller. Safe to add to or remove from any save at any time. Pairs perfectly with the Improved Defaults mod, which can pre-select The Antagonist automatically for every new game.
-
-Keywords: custom storyteller, AI storyteller mod, new storyteller, scaling difficulty, Isekai, RPG leveling, difficulty, events, raids.</description>
+Requires ISEKAI RPG Leveling. Ships with a placeholder portrait. Safe to add to or remove from any save at any time, and pairs perfectly with the Improved Defaults mod, which can pre-select The Antagonist automatically for every new game.</description>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
@@ -22,6 +20,11 @@ Keywords: custom storyteller, AI storyteller mod, new storyteller, scaling diffi
             <packageId>brrainz.harmony</packageId>
             <displayName>Harmony</displayName>
             <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        </li>
+        <li>
+            <packageId>JellyCreative.IsekaiLeveling</packageId>
+            <displayName>ISEKAI RPG LEVELING</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/3657580708</steamWorkshopUrl>
         </li>
     </modDependencies>
     <loadAfter>
