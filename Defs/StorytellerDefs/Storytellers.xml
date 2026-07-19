@@ -2,10 +2,11 @@
 <Defs>
 
   <!-- The Antagonist. Inherits BaseStoryteller like every vanilla/mod storyteller (population and
-       adaptation curves live there). Event-pacing comps below are currently the Core "Cassandra"
-       set verbatim - kept as a known-good baseline until they get tuned. The mod's own identity
-       comes from the Harmony patch on StorytellerUtility.DefaultThreatPointsNow, which scales the
-       threat budget by the party's Isekai power. Swap the portrait textures later. -->
+       adaptation curves live there). Event-pacing comps below started as the Core "Cassandra" set;
+       the ThreatBig home-raid cycle has since been retuned for a steady ~every-2-3-days cadence
+       after an initial calm (see that comp). The rest remain the Cassandra baseline. The mod's own
+       identity comes from the Harmony patch on StorytellerUtility.DefaultThreatPointsNow, which
+       scales the threat budget by the party's Isekai power. -->
   <StorytellerDef ParentName="BaseStoryteller">
     <defName>WR_TheAntagonist</defName>
     <label>The Antagonist</label>
@@ -18,14 +19,17 @@
     <comps>
       <!-- Intro -->
       <li Class="StorytellerCompProperties_ClassicIntro"/>
-      <!-- Home threats -->
+      <!-- Home threats. Retuned from Cassandra's clustered ~1-raid-per-7-days pacing to a steady
+           cadence: after the day-11 calm the cycle runs continuously (offDays 0) and fires 2 big
+           threats per 5-day on-window, min 2 days apart, i.e. roughly one raid every 2-3 days.
+           (Cassandra baseline was onDays 4.6 / offDays 6.0 / 1~2 incidents / minSpacing 1.9.) -->
       <li Class="StorytellerCompProperties_OnOffCycle">
         <category>ThreatBig</category>
         <minDaysPassed>11.0</minDaysPassed>
-        <onDays>4.6</onDays>
-        <offDays>6.0</offDays>
-        <minSpacingDays>1.9</minSpacingDays>
-        <numIncidentsRange>1~2</numIncidentsRange>
+        <onDays>5.0</onDays>
+        <offDays>0.0</offDays>
+        <minSpacingDays>2.0</minSpacingDays>
+        <numIncidentsRange>2</numIncidentsRange>
         <forceRaidEnemyBeforeDaysPassed>20</forceRaidEnemyBeforeDaysPassed>
         <disallowedTargetTags>
           <li>Map_RaidBeacon</li>
