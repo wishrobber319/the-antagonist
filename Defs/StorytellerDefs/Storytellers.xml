@@ -9,9 +9,7 @@
   <StorytellerDef ParentName="BaseStoryteller">
     <defName>WR_TheAntagonist</defName>
     <label>The Antagonist</label>
-    <description>The Antagonist knows how strong you really are. It reads your heroes' Isekai levels and grows with them - as they climb the ranks, it hits back harder. One strong hero raises the danger for the whole party, and it never eases off.
-
-Events come on a rising curve of challenge and tension: it pushes you with danger, gives you breathing room, then comes back to push once more.</description>
+    <description>The Antagonist reads your heroes' Isekai levels and grows with them - the stronger your party, the harder it hits. One strong hero raises the danger for everyone, and it never eases off.</description>
     <portraitLarge>UI/HeroArt/Storytellers/TheAntagonist</portraitLarge>
     <portraitTiny>UI/HeroArt/Storytellers/TheAntagonistTiny</portraitTiny>
     <!-- Sorts above the vanilla storytellers (Cassandra 20, Phoebe 30, Randy 40) so The Antagonist is
