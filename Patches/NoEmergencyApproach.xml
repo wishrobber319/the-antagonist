@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the "Emergency Approach" quest.
+
+    That is the Royalty quest ShuttleCrash_Rescue (its name rule "[emergency] [landing]" renders as
+    "Emergency Approach"): a damaged shuttle seeks to land, you defend its occupants against an
+    attacking faction, then load the survivors onto a rescue shuttle. It's a normal random quest
+    (rootSelectionWeight 1.9, not isRootSpecial), so the storyteller's GiveQuest roll picks it
+    weighted by that value. Setting rootSelectionWeight to 0 drops it from the pool entirely.
+
+    Global (no storyteller offers it), not scoped to The Antagonist - quest selection weight lives on
+    the shared QuestScriptDef. Gated on Royalty via MayRequire so it's a no-op without the DLC.
+-->
+<Patch>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/QuestScriptDef[defName="ShuttleCrash_Rescue"]/rootSelectionWeight</xpath>
+        <value>
+            <rootSelectionWeight>0</rootSelectionWeight>
+        </value>
+    </Operation>
+</Patch>
