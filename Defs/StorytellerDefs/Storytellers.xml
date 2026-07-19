@@ -14,7 +14,9 @@
 Events come on a rising curve of challenge and tension: it pushes you with danger, gives you breathing room, then comes back to push once more.</description>
     <portraitLarge>UI/HeroArt/Storytellers/TheAntagonist</portraitLarge>
     <portraitTiny>UI/HeroArt/Storytellers/TheAntagonistTiny</portraitTiny>
-    <listOrder>25</listOrder>
+    <!-- Sorts above the vanilla storytellers (Cassandra 20, Phoebe 30, Randy 40) so The Antagonist is
+         first in the Choose AI Storyteller list. -->
+    <listOrder>0</listOrder>
     <comps>
       <!-- Intro -->
       <li Class="StorytellerCompProperties_ClassicIntro"/>
