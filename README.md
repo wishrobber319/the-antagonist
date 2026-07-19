@@ -25,7 +25,7 @@ Curve (avg level → multiplier), Isekai tiers ~50=A, 100=S, 200=SS, 400=SSS:
 
 ## Event pacing
 
-The `StorytellerDef` is pure XML inheriting `BaseStoryteller`. Its event-pacing comps are currently the Core "Cassandra" set verbatim, kept as a known-good baseline until they get tuned — the mod's own character comes from the threat scaling above. Ships with a placeholder portrait in `Textures/UI/HeroArt/Storytellers/`.
+The `StorytellerDef` is pure XML inheriting `BaseStoryteller`. Its event-pacing comps are currently the Core "Cassandra" set verbatim, kept as a known-good baseline until they get tuned — the mod's own character comes from the threat scaling above. Portrait art lives in `Textures/UI/HeroArt/Storytellers/`.
 
 ---
 
