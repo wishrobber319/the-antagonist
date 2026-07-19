@@ -185,11 +185,14 @@
         <minDaysPassed>15</minDaysPassed>
         <mtbDays>15</mtbDays>
       </li>
-      <!-- Orbital trader -->
+      <!-- Orbital trader. With Medieval Trader Airships active these arrive as landing airships,
+           and if ground trade caravans are disabled (all-traders-airship patch) these are the
+           colony's only traders - so the cadence is tightened from Cassandra's ~1 per 15 days
+           (7 on / 8 off) to roughly one per 7 days to keep trade volume up. -->
       <li Class="StorytellerCompProperties_OnOffCycle">
         <incident>OrbitalTraderArrival</incident>
-        <onDays>7</onDays>
-        <offDays>8</offDays>
+        <onDays>6</onDays>
+        <offDays>1</offDays>
         <numIncidentsRange>1</numIncidentsRange>
       </li>
       <!-- Triggered -->
