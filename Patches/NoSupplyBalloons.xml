@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Stop the "Supply Balloons" event from ever being rolled.
+
+    "Supply Balloons" is Medieval Fantasy Themed Relic Quests' reskin (letter label + text) of the
+    vanilla ResourcePodCrash incident - a free-loot event where cargo pods crash near the colony.
+    The storyteller fires it through its Misc-category roll (StorytellerCompProperties_CategoryMTB,
+    category Misc), where each incident competes by its baseChance. Setting ResourcePodCrash's
+    baseChance to 0 drops it out of that weighted pool, so it is never selected, while leaving every
+    other Misc incident untouched.
+
+    This edits the Core incident directly, so it is global (no storyteller ever rolls it), not scoped
+    to The Antagonist - there is no clean way to exclude one incident from a category per storyteller.
+    Reward/gift deliveries that use drop pods are a separate mechanism and are unaffected.
+-->
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/IncidentDef[defName="ResourcePodCrash"]/baseChance</xpath>
+        <value>
+            <baseChance>0</baseChance>
+        </value>
+    </Operation>
+</Patch>
