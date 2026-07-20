@@ -88,10 +88,12 @@
         <minDanger>High</minDanger>
       </li>
       <li Class="StorytellerCompProperties_FactionInteraction">
+        <!-- Faction trade caravans (arrive as airships via the all-traders-airship redirect). Boosted
+             from 5/year to 12/year (~one every 5 days), minSpacing 6 -> 3, for more trade traffic. -->
         <incident>TraderCaravanArrival</incident>
         <minDaysPassed>5</minDaysPassed>
-        <baseIncidentsPerYear>5</baseIncidentsPerYear>
-        <minSpacingDays>6</minSpacingDays>
+        <baseIncidentsPerYear>12</baseIncidentsPerYear>
+        <minSpacingDays>3</minSpacingDays>
         <allowedTargetTags>
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
@@ -185,14 +187,13 @@
         <minDaysPassed>15</minDaysPassed>
         <mtbDays>15</mtbDays>
       </li>
-      <!-- Orbital trader. With Medieval Trader Airships active these arrive as landing airships,
-           and if ground trade caravans are disabled (all-traders-airship patch) these are the
-           colony's only traders - so the cadence is tightened from Cassandra's ~1 per 15 days
-           (7 on / 8 off) to roughly one per 7 days to keep trade volume up. -->
+      <!-- Orbital trader. With Medieval Trader Airships active these arrive as landing airships.
+           Cadence tightened from Cassandra's ~1 per 15 days (7 on / 8 off) to a continuous 3 on /
+           0 off (~one every 3 days) for a healthy stream of airship traders. -->
       <li Class="StorytellerCompProperties_OnOffCycle">
         <incident>OrbitalTraderArrival</incident>
-        <onDays>6</onDays>
-        <offDays>1</offDays>
+        <onDays>3</onDays>
+        <offDays>0</offDays>
         <numIncidentsRange>1</numIncidentsRange>
       </li>
       <!-- Triggered -->
