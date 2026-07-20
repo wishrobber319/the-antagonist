@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Stop the "Transport balloon crash" event from ever being rolled.
+    Stop the "Transport balloon crash" event from ever being offered.
 
-    "Transport balloon crash" is Medieval Fantasy Themed Relic Quests' reskin (letter label + text) of
-    the vanilla RefugeePodCrash incident - a lone, factionless person crash-lands and you can rescue,
-    recruit, capture, or harvest them. The storyteller fires it through its Misc-category roll
-    (StorytellerCompProperties_CategoryMTB, category Misc), where each incident competes by baseChance.
-    Setting RefugeePodCrash's baseChance to 0 drops it from that weighted pool, so it is never
-    selected, while leaving every other Misc incident untouched. (Same mechanism as the Supply Balloons
-    / ResourcePodCrash disable.)
+    "Transport balloon crash" is Medieval Fantasy Themed Relic Quests' reskin (letter + text) of the
+    vanilla RefugeePodCrash incident: an injured/factionless person crash-lands and is offered as a
+    quest (Accept/Reject) to rescue, recruit, capture, or harvest them. RefugeePodCrash is a Misc-
+    category IncidentWorker_GiveQuest; zeroing its baseChance (its weight in the Misc pool) did NOT
+    reliably stop it. Instead empty its targetTags: an incident whose targetTags is empty fails
+    IncidentWorker.CanFireNow for any target, so no storyteller comp can ever select it - the same
+    bulletproof disable used for the ground trade caravans.
 
-    Edits the Core incident directly, so it's global - no storyteller rolls it - not scoped to The
-    Antagonist.
+    Edits the Core incident directly, so it's global - no storyteller offers it.
 -->
 <Patch>
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/IncidentDef[defName="RefugeePodCrash"]/baseChance</xpath>
+        <xpath>Defs/IncidentDef[defName="RefugeePodCrash"]/targetTags</xpath>
         <value>
-            <baseChance>0</baseChance>
+            <targetTags />
         </value>
     </Operation>
 </Patch>

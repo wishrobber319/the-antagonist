@@ -2,22 +2,21 @@
 <!--
     Stop the "Supply Balloons" event from ever being rolled.
 
-    "Supply Balloons" is Medieval Fantasy Themed Relic Quests' reskin (letter label + text) of the
-    vanilla ResourcePodCrash incident - a free-loot event where cargo pods crash near the colony.
-    The storyteller fires it through its Misc-category roll (StorytellerCompProperties_CategoryMTB,
-    category Misc), where each incident competes by its baseChance. Setting ResourcePodCrash's
-    baseChance to 0 drops it out of that weighted pool, so it is never selected, while leaving every
-    other Misc incident untouched.
+    "Supply Balloons" is Medieval Fantasy Themed Relic Quests' reskin (letter + text) of the vanilla
+    ResourcePodCrash incident - a cluster of cargo pods crash near the colony with free loot.
+    ResourcePodCrash is a Misc-category incident; zeroing its baseChance (its weight in the Misc pool)
+    is not a reliable disable for these events. Instead empty its targetTags: an incident whose
+    targetTags is empty fails IncidentWorker.CanFireNow for any target, so no storyteller comp can ever
+    select it - the same bulletproof disable used for the ground trade caravans and RefugeePodCrash.
 
-    This edits the Core incident directly, so it is global (no storyteller ever rolls it), not scoped
-    to The Antagonist - there is no clean way to exclude one incident from a category per storyteller.
-    Reward/gift deliveries that use drop pods are a separate mechanism and are unaffected.
+    Edits the Core incident directly, so it's global - no storyteller rolls it. Reward/gift drop-pod
+    deliveries are a separate mechanism and are unaffected.
 -->
 <Patch>
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/IncidentDef[defName="ResourcePodCrash"]/baseChance</xpath>
+        <xpath>Defs/IncidentDef[defName="ResourcePodCrash"]/targetTags</xpath>
         <value>
-            <baseChance>0</baseChance>
+            <targetTags />
         </value>
     </Operation>
 </Patch>
