@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the Archonexus victory quest line.
+
+    "The Archonexus" is the Ideology endgame offer (GiveQuest_EndGame_ArchonexusVictory): sell your
+    colony for the first archonexus map part, then chase the remaining parts and relocate. It's fired
+    by a StorytellerCompProperties_RefiringUniqueQuest comp on the shared abstract BaseStoryteller
+    (refires once colony wealth passes 150000). It's the entry point of the whole chain - the later
+    map-part and relocation quests only follow after you accept it - so removing this one comp
+    (patches run before def inheritance resolves, so it propagates to every storyteller, The
+    Antagonist included) suppresses the entire line. Other base comps untouched.
+
+    Global by nature (no storyteller offers it), not scoped to The Antagonist. Gated on Ideology via
+    MayRequire - without that DLC the archonexus comp doesn't exist, so this is a no-op.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li[incident="GiveQuest_EndGame_ArchonexusVictory"]</xpath>
+    </Operation>
+</Patch>
