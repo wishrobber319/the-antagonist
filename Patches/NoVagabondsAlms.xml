@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the recurring "Vagabonds Hope for Alms" (charity beggars) quest.
+
+    That is the Ideology Beggars QuestScriptDef (its name rule renders as "Vagabonds Hope for Alms"):
+    a group of poor travelers periodically shows up begging for items. It's isRootSpecial (its
+    GiveQuest_Beggars incident has baseChance 0), so it never comes from the random-quest roll - it's
+    fired by a StorytellerCompProperties_OnOffCycle comp on the shared abstract BaseStoryteller (every
+    ~60 days). Removing that comp (patches run before def inheritance resolves, so it propagates to
+    every storyteller, The Antagonist included) stops the quest recurring. Other base comps untouched.
+
+    Global by nature (no storyteller offers it), not scoped to The Antagonist. Gated on Ideology via
+    MayRequire - without that DLC the beggars comp doesn't exist, so this is a no-op.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li[incident="GiveQuest_Beggars"]</xpath>
+    </Operation>
+</Patch>

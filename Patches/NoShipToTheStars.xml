@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the "Ship to the Stars" endgame quest.
+
+    That is the vanilla EndGame_ShipEscape QuestScriptDef (its name rule renders as "Ship to the
+    Stars"): the friendly-AI "start a hidden starship and fly off this rimworld" journey offer. It's
+    isRootSpecial (its GiveQuest_EndGame_ShipEscape incident has baseChance 0), so it never comes from
+    the random-quest roll - it is fired solely by a StorytellerCompProperties_SingleOnceFixed comp on
+    the shared abstract BaseStoryteller, 20 days in. Removing that comp (patches run before def
+    inheritance resolves, so it propagates to every storyteller, The Antagonist included) suppresses
+    the quest. All other shared base comps are left intact.
+
+    Global by nature (no storyteller offers it), not scoped to The Antagonist - the comp is inherited
+    from the base def and can't be removed for one storyteller only.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li[incident="GiveQuest_EndGame_ShipEscape"]</xpath>
+    </Operation>
+</Patch>
