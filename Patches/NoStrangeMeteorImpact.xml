@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Stop the "Strange meteor impact" event (Medieval Overhaul's DankPyon_GolemImpactor) - a meteor that
+    lands and disgorges dormant golems. It's a ThreatBig incident; empty its targetTags so
+    IncidentWorker.CanFireNow fails for any target and no storyteller comp can select it (the reliable
+    disable, same as the pod-crash events). Gated on Medieval Overhaul so the xpath only runs when the
+    def exists.
+-->
+<Patch>
+    <Operation Class="PatchOperationReplace" MayRequire="DankPyon.Medieval.Overhaul">
+        <xpath>Defs/IncidentDef[defName="DankPyon_GolemImpactor"]/targetTags</xpath>
+        <value>
+            <targetTags />
+        </value>
+    </Operation>
+</Patch>
