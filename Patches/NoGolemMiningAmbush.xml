@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Make mining Medieval Overhaul's golem-rock formations safe. Each DankPyon_GolemRock_* ThingDef
+    (iron/silver/gold, both the map-generated _MapGen rocks and the meteor-dropped _Incident ones)
+    carries a MedievalOverhaul.CompProperties_PawnSpawnerOnDestroy comp: when the rock is mined,
+    Mineable_CompSpawnerDestroy.Destroy calls GetComp<Comp_PawnSpawnerOnDestroy>()?.PawnSpawnerWorker,
+    spawning a hostile berserk golem with the "Golem Emerges" ThreatBig letter (100% chance).
+
+    Removing that comp disables the ambush entirely - the null-conditional (?.) in Destroy means a
+    missing comp is a safe no-op, so mining just yields the ore. Gated on Medieval Overhaul.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove" MayRequire="DankPyon.Medieval.Overhaul">
+        <xpath>Defs/ThingDef[starts-with(defName, "DankPyon_GolemRock_")]/comps/li[@Class="MedievalOverhaul.CompProperties_PawnSpawnerOnDestroy"]</xpath>
+    </Operation>
+</Patch>
