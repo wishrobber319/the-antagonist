@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Stop the "Transport balloon crash" event from ever being rolled.
+
+    "Transport balloon crash" is Medieval Fantasy Themed Relic Quests' reskin (letter label + text) of
+    the vanilla RefugeePodCrash incident - a lone, factionless person crash-lands and you can rescue,
+    recruit, capture, or harvest them. The storyteller fires it through its Misc-category roll
+    (StorytellerCompProperties_CategoryMTB, category Misc), where each incident competes by baseChance.
+    Setting RefugeePodCrash's baseChance to 0 drops it from that weighted pool, so it is never
+    selected, while leaving every other Misc incident untouched. (Same mechanism as the Supply Balloons
+    / ResourcePodCrash disable.)
+
+    Edits the Core incident directly, so it's global - no storyteller rolls it - not scoped to The
+    Antagonist.
+-->
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/IncidentDef[defName="RefugeePodCrash"]/baseChance</xpath>
+        <value>
+            <baseChance>0</baseChance>
+        </value>
+    </Operation>
+</Patch>
