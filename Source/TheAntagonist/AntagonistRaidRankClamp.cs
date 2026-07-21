@@ -137,6 +137,13 @@ namespace TheAntagonist
         public static void Postfix(Pawn __result)
         {
             Pawn pawn = __result;
+
+            // Raiders only ever generate during live play. Bail on any other pawn generation (worldgen
+            // faction bases, main-menu setup, etc.) BEFORE touching Faction.OfPlayer below: that getter
+            // logs "Could not find player faction." when no player faction exists yet, which spams once
+            // per pawn all through worldgen (the player faction isn't created until you land).
+            if (Current.ProgramState != ProgramState.Playing) return;
+
             if (!RankClamp.AntagonistActive || pawn == null || !pawn.RaceProps.Humanlike)
             {
                 return;
