@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the Biotech "Old Mechanitor Compound" quest.
+
+    That is the Biotech OpportunitySite_AncientComplex_Mechanitor QuestScriptDef (rootSelectionWeight 0
+    + isRootSpecial, so never from the random roll; its name rules turn "complex" into "compound", so it
+    renders in-game as "Old mechanitor compound"). It is fired by a
+    StorytellerCompProperties_MechanitorComplexQuest comp on the shared abstract BaseStoryteller
+    (incident GiveQuest_AncientComplex_Mechanitor, mtbDays 60). Removing that comp (patches run before
+    def inheritance, so it propagates to every storyteller, The Antagonist included) suppresses it. The
+    MechanitorShip quest that comp merely lists as a blocker is not fired here and is left intact.
+
+    Global by nature (inherited base comp, not scoped to one storyteller); any already-queued compound
+    quest in a save finishes on its own.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li[incident="GiveQuest_AncientComplex_Mechanitor"]</xpath>
+    </Operation>
+</Patch>

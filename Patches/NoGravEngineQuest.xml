@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Block the Odyssey "Mechanoid Signal" -> grav engine questline.
+
+    The signal offer is the Odyssey MechanoidSignal QuestScriptDef (isRootSpecial; its
+    GiveQuest_MechanoidSignal incident has baseChance 0, so it never comes from the random-quest roll).
+    It is fired solely by a StorytellerCompProperties_ImportantQuest comp on the shared abstract
+    BaseStoryteller, 6 days in - the comment in Core's Storytellers.xml literally labels that comp
+    "Odyssey grav engine quest", and finishing the signal is what hands out the GravEngine follow-up.
+    Removing that one comp (patches run before def inheritance resolves, so it propagates to every
+    storyteller, The Antagonist included) suppresses the whole chain; GravEngine has no comp of its own,
+    so nothing else offers it.
+
+    NB: this comp keys its quest via <questIncident> (not <incident> like most). Grav engines don't
+    belong in a medieval Isekai run. Global by nature (the comp is inherited from the base def and can't
+    be removed for one storyteller only); an already-active signal quest in a save finishes on its own.
+-->
+<Patch>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps/li[questIncident="GiveQuest_MechanoidSignal"]</xpath>
+    </Operation>
+</Patch>
