@@ -8,7 +8,3 @@
 [*][b]Era-appropriate events.[/b] It quietly suppresses the out-of-era intrusions that break the medieval fiction: grav-engine signals, shuttle rescues, supply and transport balloons, the Archonexus, orbital oddities, meteor golems and more.
 [*][b]Tuned cadence.[/b] An initial calm to find your feet, then raids settle into a steady rhythm, while trader traffic is boosted so merchants actually visit.
 [/list]
-
-[hr][/hr]
-[b]Built to be invisible[/b]
-No config screens, no busywork. Set The Antagonist as your storyteller and it does the rest. Every dial above is automatic and re-reads your colony as it grows. Isekai RPG Leveling is an optional companion: without it this runs as a solid escalating medieval storyteller; with it, it comes alive.
