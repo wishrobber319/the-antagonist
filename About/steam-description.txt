@@ -1,14 +1,14 @@
-[b]A storyteller that scales to your heroes.[/b] The Antagonist is a custom AI storyteller built for an Isekai-leveled medieval colony. It reads how strong your party has actually become and curates every raid, threat, and event to match — so a fantasy run stays dangerous from the first ambush all the way to rank SSS, and the late game never turns into a formality.
+[b]A storyteller that scales to your heroes.[/b] The Antagonist is a custom AI storyteller built for an Isekai-leveled medieval colony. It reads how strong your party has actually become and curates every raid, threat, and event to match, so a fantasy run stays dangerous from the first ambush all the way to rank SSS, and the late game never turns into a formality.
 
 [hr][/hr]
 [b]What's inside[/b]
 [list]
-[*][b]Threat that tracks your party[/b] — it reads your colonists' Isekai levels and scales the threat budget to a power-weighted average, so one high-level hero can't hide behind rookies and the danger climbs right alongside you.
-[*][b]Automatic rank & gear clamps[/b] — enemy ranks and their forged equipment are capped to your colony's best rank, doing what Isekai's Adaptive Raid Ranks was meant to: no surprise S-rank invaders in heavy gear while your strongest pawn is still a B.
-[*][b]Era-appropriate events[/b] — quietly suppresses the out-of-era intrusions that break the medieval fiction: grav-engine signals, shuttle rescues, supply and transport balloons, the Archonexus, orbital oddities, meteor golems and more.
-[*][b]Tuned cadence[/b] — an initial calm to find your feet, then raids settle into a steady rhythm, while trader traffic is boosted so merchants actually visit.
+[*][b]Threat that tracks your party.[/b] It reads your colonists' Isekai levels and scales the threat budget to a power-weighted average, so one high-level hero can't hide behind rookies and the danger climbs right alongside you.
+[*][b]Automatic rank and gear clamps.[/b] Enemy ranks and their forged equipment are capped to your colony's best rank, doing what Isekai's Adaptive Raid Ranks was meant to: no surprise S-rank invaders in heavy gear while your strongest pawn is still a B.
+[*][b]Era-appropriate events.[/b] It quietly suppresses the out-of-era intrusions that break the medieval fiction: grav-engine signals, shuttle rescues, supply and transport balloons, the Archonexus, orbital oddities, meteor golems and more.
+[*][b]Tuned cadence.[/b] An initial calm to find your feet, then raids settle into a steady rhythm, while trader traffic is boosted so merchants actually visit.
 [/list]
 
 [hr][/hr]
 [b]Built to be invisible[/b]
-No config screens, no busywork. Set The Antagonist as your storyteller and it does the rest — every dial above is automatic and re-reads your colony as it grows. Isekai RPG Leveling is an optional companion: without it this runs as a solid escalating medieval storyteller; with it, it comes alive.
+No config screens, no busywork. Set The Antagonist as your storyteller and it does the rest. Every dial above is automatic and re-reads your colony as it grows. Isekai RPG Leveling is an optional companion: without it this runs as a solid escalating medieval storyteller; with it, it comes alive.
